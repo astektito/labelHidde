@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">label hidde</string>
+    <string name="ocultar">Ocultar</string>
+    <string name="mostrar">Mostrar</string>
 </resources>
