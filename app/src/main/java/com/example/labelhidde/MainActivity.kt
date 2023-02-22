@@ -5,9 +5,16 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.view.isVisible
 import com.example.labelhidde.databinding.ActivityMainBinding
 
-
+fun View.toggleVisibility() {
+    visibility = if (visibility == View.VISIBLE) {
+        View.GONE
+    } else {
+        View.VISIBLE
+    }
+}
 
 class MainActivity : AppCompatActivity() {
     /*    private lateinit var btnHidde: Button
@@ -36,6 +43,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnHidde.setOnClickListener {
+            binding.textHidde.toggleVisibility()
+            var buttonText = if (binding.textHidde.isVisible) R.string.ocultar else R.string.mostrar
+            binding.btnHidde.setText(buttonText)
+        }
+
+       /* binding.btnHidde.setOnClickListener {
             if (binding.textHidde.visibility == View.GONE) {
                 binding.textHidde.visibility = View.VISIBLE
                 binding.btnHidde.setText(R.string.ocultar)
@@ -43,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                 binding.textHidde.visibility = View.GONE
                 binding.btnHidde.setText(R.string.mostrar)
             }
-        }
+        }*/
     }
 }
 
